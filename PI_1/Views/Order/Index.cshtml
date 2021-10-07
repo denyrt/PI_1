@@ -1,0 +1,29 @@
+﻿@model IEnumerable<OrderViewModel>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<div class="container">
+    <h4 class="text-center">Orders</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Client</th>
+                <th scope="col">Address</th>
+                <th scope="col">Car</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>@order.ClientName</td>
+                    <td>@order.Address</td>
+                    <td>@order.Car.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

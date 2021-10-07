@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CarViewModel>
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>@car.Name</td>
+                    <td>@car.Price</td>
+                    <td>
+                        <a class="btn btn-primary"
+                           asp-controller="Order"
+                           asp-action="OrderForm"
+                           asp-route-id="@car.Id">
+                            Buy
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+</div>
